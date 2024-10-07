@@ -1,10 +1,11 @@
 import React , { useState } from 'react';
-// import props from 'prop-types';
+// import propTypes from 'prop-types';
 
 
 export default function TextForm(props) {
+    
     const handleUpClick = () => {
-        // console.log('UpperCase was Clicked' + text)
+        // eslint-disable-next-line
         let newText = text.toUpperCase();
         setText(newText)
     }
@@ -44,7 +45,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to UpperCase</button>
         <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to LowerCase</button>
         <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
-        <button className="btn btn-primary mx-2" onClick={handleClearExtraSpaces}>Clear Extra Spaces</button>
+        <button className="btn btn-primary mx-2" onClick={handleClearExtraSpaces}>Clear Extra </button>
         <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
     </div>
     <div className="container my-3">
