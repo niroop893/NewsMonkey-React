@@ -58,8 +58,7 @@ function App() {
     <div className="container my-3">
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
     <Routes>
-    {/* /users --> Component 1
-        /users/home --> Component 2 */}
+    
           <Route path="/about" element={<About mode={mode} />} />
           <Route path="/contact" element={<Contact mode={mode} />} />
           <Route path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode} />} />
