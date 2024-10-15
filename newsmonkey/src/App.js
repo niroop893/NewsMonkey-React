@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
 import Alert from "./components/Alert";
-// import Contact from "./components/Contact";
+import Contact from "./components/Contact";
 import React, { useState } from "react";
 import {
   BrowserRouter as Router,
@@ -61,6 +61,7 @@ function App() {
     {/* /users --> Component 1
         /users/home --> Component 2 */}
           <Route path="/about" element={<About mode={mode} />} />
+          <Route path="/contact" element={<Contact mode={mode} />} />
           <Route path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode} />} />
           </Routes> 
     
