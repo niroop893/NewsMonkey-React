@@ -7,5 +7,10 @@
     "workbench.colorTheme": "Quiet Light",
     "workbench.preferredDarkColorTheme": "Quiet Light",
     "direnv.path.executable": "",
-    "editor.formatOnType": false
+    "editor.formatOnType": false,
+    "pieces.autocomplete": true,
+    "pieces.OS.autoLaunchOnInteraction": true,
+    "pieces.OS.launchOnStartup": "Yes",
+    "appService.defaultWebAppToDeploy": "/subscriptions/5efff011-5351-479e-9c47-2a2742ea0559/resourceGroups/Test/providers/Microsoft.Web/sites/Test6682",
+    "appService.deploySubpath": "."
 }
