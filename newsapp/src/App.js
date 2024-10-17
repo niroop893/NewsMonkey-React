@@ -1,17 +1,20 @@
 import './App.css';
-
-import React, { Component } from 'react'
-import NavBar from './components/NavBar';
+import Navbar from './components/Navbar';
 import News from './components/News';
 
-export default class App extends Component {
+import React, { Component } from 'react'
 
+export default class App extends Component {
+  c = 'niroop';
   render() {
     return (
       <div>
-        <NavBar/>
-        <News/>
+        Hello {this.c}
+        <Navbar />
+        <News />
       </div>
     )
   }
 }
+
+
