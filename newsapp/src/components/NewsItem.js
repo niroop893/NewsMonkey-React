@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export class NewsItem extends Component {
+
+const NewsItem = (props) => {
   // eslint-disable-next-line
   
-  render() {
+  
     let {title, description, imageUrl, newsUrl, author, date, source} = this.props;
     return (
       <div>
@@ -24,7 +26,7 @@ export class NewsItem extends Component {
           </div>
       </div>
     )
-  }
+  
 }
 
 export default NewsItem
