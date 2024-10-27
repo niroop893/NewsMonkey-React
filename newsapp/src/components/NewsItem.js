@@ -1,12 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 
 const NewsItem = (props) => {
-  // eslint-disable-next-line
   
-  
-    let {title, description, imageUrl, newsUrl, author, date, source} = this.props;
+    let {title, description, imageUrl, newsUrl, author, date, source} = props;
     return (
       <div>
         <div className='my-3'>
