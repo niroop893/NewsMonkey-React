@@ -1,8 +1,6 @@
 # niroop
 test
 
-123
-
 
 ## Getting started
 
