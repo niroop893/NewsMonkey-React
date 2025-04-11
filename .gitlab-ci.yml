@@ -3,6 +3,7 @@ image: node:14  # Specify the Node.js version to use
 stages:
   - build
   - test
+  - lint
   - deploy
 
 cache:
