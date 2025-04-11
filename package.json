@@ -4,11 +4,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "lint": "eslint .",  // Add the lint script
-    "test": "echo \"No tests specified\" && exit 0"  // Placeholder for tests
+    "lint": "eslint .",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.32.0"  // Add ESLint as a development dependency
+    "eslint": "^7.32.0"
   }
 }
