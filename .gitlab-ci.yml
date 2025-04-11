@@ -1,13 +1,26 @@
+image: node:14  # Specify the Node.js version to use
+
 stages:
   - build
   - test
+  - lint
   - deploy
+
+cache:
+  paths:
+    - node_modules/  # Cache node_modules to speed up builds
 
 build:
   stage: build
   script:
     - echo "Building the application..."
     - npm install
+
+lint:
+  stage: test
+  script:
+    - echo "Linting the application..."
+    - npm run lint  # Assuming you have a lint script in your package.json
 
 test:
   stage: test
@@ -20,3 +33,5 @@ deploy:
   script:
     - echo "Deploying the application..."
     - npm start
+  only:
+    - main  # Only deploy from the main branch
