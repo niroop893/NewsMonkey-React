@@ -10,7 +10,7 @@ stages:
 
 
 before_script:
-  - dos2unix publish.sh
+  - sed -i 's/\r//g' publish.sh
   - chmod +x publish.sh
 
 build:
