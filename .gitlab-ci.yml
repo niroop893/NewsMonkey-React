@@ -8,7 +8,9 @@ stages:
   - publish
   - deploy
 
+
 before_script:
+  - dos2unix publish.sh
   - chmod +x publish.sh
 
 build:
