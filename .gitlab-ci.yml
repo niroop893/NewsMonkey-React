@@ -1,15 +1,9 @@
-image: node:14  # Specify the Node.js version to use
-
 stages:
   - build
   - test
   - lint
-  - package
   - deploy
-
-cache:
-  paths:
-    - node_modules/  # Cache node_modules to speed up builds
+  - package
 
 build:
   stage: build
@@ -29,11 +23,24 @@ test:
     - echo "Running tests..."
     - npm test
 
+package:
+  stage: package
+  script:
+    - echo "Packaging the application..."
+    - npm pack
+  artifacts:
+    paths:
+      - *.tgz
+
 publish_package:
   stage: package
   script:
     - echo "Publishing package to GitLab Package Registry..."
-    - npm install gitlab-package-registry
+    - curl --header "Authorization: Bearer ${CI_JOB_TOKEN}" --header "Content-Type: application/json" --request POST --data '{"package": {"name": "${CI_PROJECT_NAME}", "version": "${CI_COMMIT_TAG}"}}' https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages
+    - curl --header "Authorization: Bearer ${CI_JOB_TOKEN}" --header "Content-Type: application/octet-stream" --request PUT --data-binary "@${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tgz" https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/${CI_PROJECT_NAME}/${CI_COMMIT_TAG}/${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tgz
+  only:
+    - main  # Only publish from the main branch
+
 
 deploy:
   stage: deploy
@@ -42,3 +49,4 @@ deploy:
     - npm start
   only:
     - main  # Only deploy from the main branch
+
