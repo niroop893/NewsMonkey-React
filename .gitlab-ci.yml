@@ -4,6 +4,7 @@ stages:
   - build
   - test
   - lint
+  - package
   - deploy
 
 cache:
