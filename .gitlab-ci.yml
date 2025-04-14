@@ -28,6 +28,12 @@ test:
     - echo "Running tests..."
     - npm test
 
+publish_package:
+  stage: package
+  script:
+    - echo "Publishing package to GitLab Package Registry..."
+    - npm install gitlab-package-registry
+
 deploy:
   stage: deploy
   script:
